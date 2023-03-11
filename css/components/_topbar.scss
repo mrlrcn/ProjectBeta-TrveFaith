@@ -1,0 +1,156 @@
+nav {
+    width: 100vw;
+    height: 50px;
+    background-color: black;
+}
+.hamburger {
+	position: relative;
+	display: block;
+	width: 50px;
+	height: 50px;
+	z-index: 999; /* ARREGLAR ESO, hacer un mapa o algo?*/
+
+	> .menu-hamburguer__icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 20px;
+		height: 2px;
+		background-color: white;
+		transform: translate(-50%,-50%);
+
+		&:before, &:after {
+			position: absolute;
+			content: '';
+			width: 20px;
+			height: 2px;
+			background-color: white;
+		}
+
+		&:before {
+			transform: translateY(-5px);
+			animation: line1 250ms linear;
+		}
+
+		@keyframes line1 {
+			0%   { transform: translateY(0); }
+			50%  { transform: translateY(0); }
+			100% { transform: translateY(-5px) rotate(0deg); }
+		}
+
+		&:after {
+			transform: translateY(5px);
+			animation: line3 250ms linear;
+		}
+
+		@keyframes line3 {
+			0%   { transform: translateY(0); }
+			50%  { transform: translateY(0); }
+			100% { transform: translateY(5px) rotate(0deg); }
+		}
+	}
+}
+
+.menu__opened {
+	position: fixed;
+	display: none;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0%;
+	margin: 0;
+	padding: 100px 15px 0;
+	background-color: transparentize(black, 0.1);
+	transition: height 150ms linear;
+	z-index: 998; /*ARREGLAR ESTO*/
+
+	li {
+
+		a {
+			color: white;
+			font-weight: 400;
+
+			i {
+			}
+		}
+
+		.dropdown {
+			display: none;
+		}
+
+		&:hover {
+
+			.dropdown {
+
+				&:before {
+				}
+
+				li {
+
+					a {
+
+						&:hover,
+						&:active,
+						&:focus {
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#menu {
+	display: none;
+
+	&:checked ~ .hamburger {
+
+		> div {
+			visibility: hidden;
+
+			&:before, &:after {
+				visibility: visible;
+				background-color: white;
+				transform-origin: center center;
+				transform: translateY(0);
+				transition: all 250ms linear;
+			}
+
+			&:before {
+				transform: rotate(-45deg);
+				animation: burger1 250ms linear;
+			}
+
+			@keyframes burger1 {
+				0%   { transform: translateY(0); }
+				50%  { transform: translateY(0); }
+				100% { transform: translateY(0) rotate(-45deg); }
+			}
+
+			&:after {
+				transform: rotate(45deg);
+				animation: burger2 250ms linear;
+			}
+
+			@keyframes burger2 {
+				0%   { transform: translateY(0); }
+				50%  { transform: translateY(0); }
+				100% { transform: translateY(0) rotate(45deg); }
+			}
+		}
+	}
+
+	&:checked ~ .menu__opened {
+		display: block;
+		height: 100%;
+		transition: height 150ms linear;
+	}
+}
+
+
+/* Testing */
+.topbar-menu__list__items {
+
+    height: calc(100vh / 6);
+
+}
