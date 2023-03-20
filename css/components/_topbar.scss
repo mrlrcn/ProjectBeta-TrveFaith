@@ -1,11 +1,33 @@
-nav {
-    width: 100vw;
-    height: 50px;
+.topbar {
     background-color: black;
+	display: flex;
+  	justify-content: space-between;
+	align-items: center;
+  	padding: 0;
+  	position: fixed;
+  	inset: 0 0 auto 0;
+
+	&__logo {
+		width: 200px;
+		height: auto;
+		margin-top: 3px;
+	}
+
+	&__actions {
+		display: flex;
+		padding: 0.5rem;
+		gap: 1rem;
+
+		&__icons {
+			color:white;
+		}
+	}
 }
+
 .hamburger {
 	position: relative;
-	display: block;
+	display: flex;
+	margin: 0;
 	width: 50px;
 	height: 50px;
 	z-index: 999; /* ARREGLAR ESO, hacer un mapa o algo?*/

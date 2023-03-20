@@ -1,12 +1,41 @@
-nav {
-  width: 100vw;
-  height: 50px;
+/* Aqui Tipografias y paleta colores*/
+.topbar {
   background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  position: fixed;
+  inset: 0 0 auto 0;
+}
+.topbar__logo {
+  width: 200px;
+  height: auto;
+  margin-top: 3px;
+}
+.topbar__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+.topbar__actions__icons {
+  color: white;
 }
 
 .hamburger {
   position: relative;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
   width: 50px;
   height: 50px;
   z-index: 999; /* ARREGLAR ESO, hacer un mapa o algo?*/
