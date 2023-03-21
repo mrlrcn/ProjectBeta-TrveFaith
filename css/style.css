@@ -1,4 +1,51 @@
+/* Google Fonts Import */
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700;1,900&family=Space+Grotesk:wght@300;400;500;700&display=swap");
 /* Aqui Tipografias y paleta colores*/
+:root {
+  /* COLOR PALETTE */
+  --pure-black: #000000;
+  --black: #333333;
+  --gray: #808080;
+  --light-gray: #F5F5F5;
+  --pure-white: #FFFFFF;
+}
+
+/* FONTS VARIABLES */
+/* SIZES */
+/* HEADERS */
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  font-family: "Epilogue", sans-serif;
+}
+
+h1 {
+  font-size: 4.8rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3.2rem;
+}
+
+h4 {
+  font-size: 2.4rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.8rem;
+}
+
 .topbar {
   background-color: black;
   display: -webkit-box;
@@ -13,6 +60,7 @@
   padding: 0;
   position: fixed;
   inset: 0 0 auto 0;
+  z-index: 900;
 }
 .topbar__logo {
   width: 200px;
@@ -253,22 +301,30 @@ main {
   width: 100vw;
 }
 
+.header-hero {
+  background-image: url("./imgs/tf-img2.jpg");
+  background-color: red;
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.header-hero__img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .site-footer {
   position: relative;
   max-width: 100vw;
   height: auto;
   padding: 50px 100px;
   padding: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  background-color: black;
-  color: white;
+  background-color: var(--pure-black);
+  color: var(--pure-white);
 }
 .site-footer__top-section {
   display: -webkit-box;
@@ -309,17 +365,17 @@ main {
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
-  color: white;
+  color: var(--pure-white);
 }
 .site-footer__bottom-section {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: gray;
+  color: var(--gray);
 }
 .site-footer__instagram a {
-  color: white;
+  color: var(--gray);
   text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -359,5 +415,5 @@ main {
 }
 .site-footer__legal-links a {
   text-decoration: none;
-  color: gray;
+  color: var(--gray);
 }
